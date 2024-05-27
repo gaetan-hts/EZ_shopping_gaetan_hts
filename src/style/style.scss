@@ -1,0 +1,15 @@
+
+$background-color-dark: #292a32;
+$background-color-light: #fbfaf8;
+$complimentary-color-dark: #393b43;
+$complimentary-color-light: #feffff;
+
+body {
+    background-color: $background-color-light;
+    color: $background-color-dark;
+}
+
+body.dark-mode {
+    background-color: $background-color-dark;
+    color: $background-color-light;
+}
