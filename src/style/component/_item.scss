@@ -1,0 +1,56 @@
+.item-container {
+  display: flex;
+  flex: 1 0 45%;
+  margin-bottom: 30px;
+  
+  .item-img {
+    @include centerChild();
+    margin: 0 30px;
+    img {
+      width: 150px;
+      height: auto;
+    }
+  }
+
+  .item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h2 {
+      strong {
+        background-color: $font-light;
+        color: grey;
+        font-weight: 500;
+        padding: 2px 5px;
+        border-radius: 2px;
+        font-size: 12px;
+        text-wrap: nowrap;
+      }
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 16px
+    }
+
+    label {
+      font-weight: 500;
+    }
+
+    input {
+      width: 35px;
+      margin-left: 5px;
+    }
+
+    .item-price {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    button {
+      @include btn();
+      width: 100px;
+    }
+  }
+}

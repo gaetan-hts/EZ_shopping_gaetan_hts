@@ -1,0 +1,25 @@
+.cart-container {
+  margin-top: 100px;
+  padding: 10px;
+  header {
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .btn-container {
+      display: flex;
+      gap: 10px;
+      button {
+        @include btn();
+      }
+    }
+  }
+
+  hr {
+    margin: 10px 0;
+  }
+}

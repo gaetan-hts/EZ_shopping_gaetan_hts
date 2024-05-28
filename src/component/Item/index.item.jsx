@@ -37,19 +37,19 @@ const Item = ({ product, isCart }) => {
   };
 
   return (
-    <li>
+    <li className="item-container">
       <div className="item-img">
         <img src={product.image} alt={product.title} />
       </div>
       <div className="item-details">
         <h2>
-          {product.title} - {product.category}
+          {product.title} <strong>{product.category}</strong>
         </h2>
         <h3>{product.description}</h3>
         <div className="item-price">${product.price}</div>
         {isCart ? (
           <label>
-            Quantity:
+            Quantity :
             <input
               type="number"
               value={quantity}
@@ -59,7 +59,7 @@ const Item = ({ product, isCart }) => {
           </label>
         ) : (
           <label>
-            Quantity:
+            Quantity :
             <input
               type="number"
               value={quantity}

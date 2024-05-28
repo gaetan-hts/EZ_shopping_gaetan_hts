@@ -1,0 +1,77 @@
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$font1: Roboto, cursive;
+
+//colors
+$bg-dark: #292a32;
+$bg-light: #ffffff;
+$complimentary-dark: #242424;
+$complimentary-light: #EAB023;
+$font-light: #ACACAC;
+$font-dark: #000000;
+
+//mixin
+@mixin centerChild {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+@mixin btn {
+    background-color: $complimentary-light;
+    border-radius: 4px;
+    border: none;
+    font-weight: 500;
+    color: $font-dark;
+    @include centerChild();
+    padding:6px 12px;
+    cursor: pointer;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font1;
+  }
+
+//Body-light
+body {
+    background-color: $bg-light;
+    color: $font-dark;
+
+    nav {
+        background: #EAB023;
+        }
+
+    a {
+            text-decoration: none;
+            color: $font-dark;
+        }
+
+    .dark-mode-toggle {
+        color: $font-dark;
+    }
+}
+
+
+//Body-dark
+body.dark-mode {
+    background-color: $bg-dark;
+    color: $font-light;
+
+    nav {
+        background: #242424;
+        }
+
+    a {
+            text-decoration: none;
+            color: $font-light;
+        }
+
+    .dark-mode-toggle {
+            color: $font-light;
+    }
+}

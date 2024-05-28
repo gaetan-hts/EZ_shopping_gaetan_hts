@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import DarkModeToggle from "../DarkModeToggle/index.darkModeToggle";
+import { selectCart, selectUser } from "../../store/selector";
 
 const Navigation = () => {
   const [cartNumber, setCartNumber] = useState(0);
-  const cart = useSelector((state) => state.cart);
-  const user = useSelector((state) => state.user);
+  const user = useSelector(selectUser);
+  const cart = useSelector(selectCart);
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
@@ -19,20 +20,23 @@ const Navigation = () => {
   }, [cart]);
 
   return (
-    <div>
-      <NavLink to={"/"}>
-        <h1 className="logo">EZ Shopping</h1>
-      </NavLink>
+    <nav>
+      <h1 className="logo">
+        <NavLink to={"/"}>EZ Shopping</NavLink>
+      </h1>
       <div className="nav-right-side">
         <div className="user-info">
           <NavLink to={"/user"}>
-            icon {user.name} {user.lastName}
+            <i className="fa-solid fa-user"></i> {user.name} {user.lastName}
           </NavLink>
         </div>
-        <NavLink to={"/cart"}>icon {cartNumber} item(s)</NavLink>
+        <NavLink to={"/cart"}>
+          <i className="fa-solid fa-cart-shopping"></i> {cartNumber}{" "}
+          {cartNumber > 1 ? "items" : "item"}
+        </NavLink>
         <DarkModeToggle />
       </div>
-    </div>
+    </nav>
   );
 };
 

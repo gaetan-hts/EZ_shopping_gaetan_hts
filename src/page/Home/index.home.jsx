@@ -3,7 +3,7 @@ import Navigation from "../../component/Navigation/index.navigation";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home-container">
       <Navigation />
       <ItemList />
     </div>

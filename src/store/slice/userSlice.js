@@ -1,11 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  id: 1,
-  name: "Alan",
-  lastName: "Turing",
-  email: "alan@turing.com",
+const getInitialState = () => {
+  const storedState = localStorage.getItem("user");
+  return storedState
+    ? JSON.parse(storedState)
+    : {
+        id: 1,
+        name: "Alan",
+        lastName: "Turing",
+        email: "alan@turing.com",
+      };
 };
+
+const initialState = getInitialState();
 
 const userSlice = createSlice({
   name: "user",
@@ -17,6 +24,7 @@ const userSlice = createSlice({
       state.name = name;
       state.lastName = lastName;
       state.email = email;
+      localStorage.setItem("user", JSON.stringify(state));
     },
   },
 });
