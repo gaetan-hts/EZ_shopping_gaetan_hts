@@ -2,6 +2,10 @@
   display: flex;
   flex: 1 0 45%;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    flex: 1 0 100%;
+  }
   
   .item-img {
     @include centerChild();

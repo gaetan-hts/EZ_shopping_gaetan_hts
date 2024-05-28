@@ -18,5 +18,25 @@ nav {
       margin-right: 5px;
     }
   }
+
+  .nav-mobile {
+    position: absolute;
+    z-index: 100;
+    top: 70px;
+    left: 0;
+    width: 100vw;
+    padding: 10px;
+    border-top: 1px black solid;
+    background: $complimentary-light;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    
+    a, .dark-mode-toggle {
+      color: $font-dark;
+    }
+  }
 }
 
